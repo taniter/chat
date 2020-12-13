@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./web.assets_backend.css">
+    <link rel="stylesheet" href="./web.assets_common.css">
+
+</head>
+
+<body>
+    <div class=" o_action_manager">
+        <div class="o_control_panel">
+            <div class="o_cp_top">
+                <div class="o_cp_top_left">
+                    <ol role="navigation" class="breadcrumb">
+                        <li class="breadcrumb-item active">Quản Lý Dự Án</li>
+                    </ol>
+                </div>
+                <div class="o_cp_top_right">
+                    <div role="search" class="o_cp_searchview">
+                        <div role="search" class="o_searchview">
+                            <i title="Tìm Kiếm..." aria-label="Tìm Kiếm..." class="o_searchview_icon fa fa-search"></i>
+                            <div class="o_searchview_input_container">
+                                <input type="text" placeholder="Search..." class="o_searchview_input" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="o_cp_bottom">
+                <div class="o_cp_bottom_left">
+                    <div role="toolbar" class="o_cp_buttons">
+                        <button type="button" data-toggle="modal" data-target="#modal_1491"
+                            class="btn btn-primary o-kanban-button-new">Tạo Dự Án Mới</button>
+                    </div>
+                </div>
+                <div class="o_cp_bottom_right">
+                    <div class="btn-group o_search_options position-static">
+                        <div class="btn-group o_dropdown o_filter_menu">
+                            <button data-toggle="dropdown" type="button"
+                                class="o_dropdown_toggler_btn btn btn-secondary">
+                                <i class="fa fa-filter"></i>
+                                <span class="o_dropdown_title">Filters</span>
+                            </button>
+                            <ul class="o_dropdown_menu dropdown-menu " role="menu">
+                                <li role="menuitem" class="o_menu_item">
+                                    <a class="dropdown-item">My Favorites</a>
+                                </li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li role="menuitem" class="o_menu_item">
+                                    <a class="dropdown-item">Followed</a>
+                                </li>
+                                <li role="menuitem" class="o_menu_item">
+                                    <a class="dropdown-item">My Projects</a>
+                                </li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li role="menuitem" class="o_menu_item">
+                                    <a class="dropdown-item">Archived</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="btn-group o_dropdown o_group_by_menu">
+                            <button data-toggle="dropdown" type="button"
+                                class="o_dropdown_toggler_btn btn btn-secondary">
+                                <i class="fa fa-bars"> </i>
+                                <span class="o_dropdown_title">Group By</span>
+                            </button>
+                            <ul class="o_dropdown_menu dropdown-menu " role="menu">
+                                <li role="menuitem" class="o_menu_item"></li>
+                                <a class="dropdown-item">Project Manager</a>
+                                </li>
+                                <li role="menuitem" class="o_menu_item">
+                                    <a class="dropdown-item">Customer</a>
+                                </li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <div class="o_generator_menu">
+                                    <button type="button" class="o_add_custom_group_by dropdown-item">Add Custom
+                                        Group</button>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="btn-group o_dropdown o_favorite_menu">
+                            <button data-toggle="dropdown" type="button"
+                                class="o_dropdown_toggler_btn btn btn-secondary">
+                                <i class="fa fa-star"></i>
+                                <span class="o_dropdown_title">Favorites</span>
+                            </button>
+                            <ul class="o_dropdown_menu dropdown-menu" role="menu">
+                                <li role="menuitem" class="o_menu_item o_add_favorite">
+                                    <button type="button" class="dropdown-item">Save current search</button>
+                                </li>
+                                <li role="separator" class="dropdown-divider"></li>
+                                <li role="menuitem" class="o_menu_item o_import_menu">
+                                    <button type="button" class="dropdown-item"> Import records </button>
+                                </li>
+                                <li role="menuitem" class="o_menu_item o_add_to_board">
+                                    <button type="button" class="dropdown-item">Add to my dashboard</button>
+                                </li>
+                                <li role="menuitem" class="o_menu_item o_add_to_spreadsheet">
+                                    <a class="dropdown-item">Add to Google Spreadsheet</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o_content d-none" style="min-height: 100vh; padding: 10px; background-color: white;">
+            <div
+                class="o_kanban_view row oe_background_grey o_kanban_dashboard o_project_kanban o_emphasize_colors o_kanban_ungrouped">
+                <div
+                    class="oe_kanban_color_10 col-6 col-sm-6 col-lg-3 col-md-4 col-xl-3 oe_kanban_global_click o_has_icon o_kanban_record">
+                    <div class="o_project_kanban_main">
+                        <div class="o_kanban_card_content mw-100">
+                            <div class="o_kanban_primary_left">
+                                <div class="o_primary">
+                                    <span class="o_text_overflow">AGR - S00047
+                                    </span>
+                                    <span class="o_text_overflow">
+                                        <strong>Deco Addict</strong>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-toggle="dropdown" class="o_kanban_manage_toggle_button o_left">
+                            <i class="fa fa-ellipsis-v"></i>
+                        </a>
+                        <div class="o_kanban_card_manage_pane dropdown-menu" style="max-width: 150px;">
+                            <div class="o_kanban_card_manage_section o_kanban_manage_reports">
+                                <div role="menuitem">
+                                    <a class=" oe_kanban_action oe_kanban_action_a">Share</a>
+                                </div>
+                                <div role="menuitem">
+                                    <a class=" oe_kanban_action oe_kanban_action_a">Edit</a>
+                                </div>
+                            </div>
+                            <div role="menuitem" class="o_no_padding_kanban_colorpicker">
+                                <ul class="oe_kanban_colorpicker">
+
+                                    <li>
+                                        <a data-color="0" class="oe_kanban_color_0" title="No color"
+                                            aria-label="No color"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="1" class="oe_kanban_color_1" title="Red" aria-label="Red"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="2" class="oe_kanban_color_2" title="Orange"
+                                            aria-label="Orange"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="3" class="oe_kanban_color_3" title="Yellow"
+                                            aria-label="Yellow"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="4" class="oe_kanban_color_4" title="Light blue"
+                                            aria-label="Light blue"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="5" class="oe_kanban_color_5" title="Dark purple"
+                                            aria-label="Dark purple"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="6" class="oe_kanban_color_6" title="Salmon pink"
+                                            aria-label="Salmon pink"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="7" class="oe_kanban_color_7" title="Medium blue"
+                                            aria-label="Medium blue"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="8" class="oe_kanban_color_8" title="Dark blue"
+                                            aria-label="Dark blue"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="9" class="oe_kanban_color_9" title="Fushia"
+                                            aria-label="Fushia"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="10" class="oe_kanban_color_10" title="Green"
+                                            aria-label="Green"></a>
+                                    </li>
+
+                                    <li>
+                                        <a data-color="11" class="oe_kanban_color_11" title="Purple"
+                                            aria-label="Purple"></a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="o_right">
+                            <div class="o_favorite o_field_widget" name="is_favorite">
+                                <a>
+                                    <i class="fa fa-star-o"></i>
+                                </a>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="o_project_kanban_boxes">
+                        <a class="o_project_kanban_box oe_kanban_action oe_kanban_action_a">
+                            <div>
+                                <span class="o_value">2</span>
+                                <span class="o_label">Tasks</span>
+                            </div>
+                        </a>
+                        <a class="o_project_kanban_box o_project_timesheet_box oe_kanban_action oe_kanban_action_a">
+                            <div>
+                                <span class="o_label">Overview</span>
+                            </div>
+                        </a>
+                        <a class="o_project_kanban_box oe_kanban_action oe_kanban_action_a">
+                            <div>
+                                <span class="o_label">Planning</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="o_content"  style="min-height: 100vh; padding: 10px; background-color: white;">
+            <div class="o_kanban_view o_kanban_small_column o_kanban_project_tasks ui-sortable o_kanban_grouped" 
+            style="min-height: 100vh; padding: 10px; background-color: white;">
+                <div class="o_kanban_group ui-sortable o_kanban_has_progressbar" data-id="1" role="feed"
+                    aria-labelledby="kanban_header_1">
+                    <div class="o_kanban_header">
+                        <div class="o_kanban_header_title">
+                            <span id="#kanban_header_1" class="o_column_title">New</span>
+                            <span class="o_column_unfold"><i class="fa fa-arrows-h" role="img" aria-label="Unfold"
+                                    title="Unfold"></i></span>
+                            <span class="o_kanban_config dropdown">
+                                <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" href="#"><i
+                                        class="fa fa-gear" role="img" aria-label="Settings" title="Settings"></i></a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a role="menuitem" class="dropdown-item o_kanban_toggle_fold" href="#">Fold</a>
+
+                                    <a role="menuitem" class="dropdown-item o_column_edit" href="#">Edit Stage</a>
+                                    <a role="menuitem" class="dropdown-item o_column_delete" href="#">Delete</a>
+
+
+                                    <a role="menuitem" href="#" class="dropdown-item o_column_archive_records">Archive
+                                        All</a>
+                                    <a role="menuitem" href="#"
+                                        class="dropdown-item o_column_unarchive_records">Unarchive All</a>
+
+                                </div>
+                            </span>
+                            <span class="o_kanban_quick_add"><i class="fa fa-plus" role="img" aria-label="Quick add"
+                                    title="Quick add"></i></span>
+                        </div>
+                        <div class="o_kanban_counter">
+                            <div class="o_kanban_counter_progress progress">
+
+
+                                <div class="progress-bar bg-success-full" data-filter="done"
+                                    data-original-title="0 Ready" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-danger-full" data-filter="blocked"
+                                    data-original-title="0 Blocked" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-muted-full o_bar_has_records" data-filter="normal"
+                                    data-original-title="2 In Progress" aria-valuemin="0" aria-valuemax="2"
+                                    aria-valuenow="2" role="progressbar"
+                                    style="width: 100%; max-width: 100%; min-width: 6%;"></div>
+
+
+                                <div class="progress-bar bg-muted-full" data-filter="__false"
+                                    data-original-title="0 Other" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+                            </div>
+                            <div class="o_kanban_counter_side"><b>2</b></div>
+                        </div>
+                    </div>
+
+                    <div class="oe_kanban_color_0 oe_kanban_card oe_kanban_global_click o_kanban_record oe_kanban_card_muted"
+                        modifiers="{}" tabindex="0" role="article">
+                        <div class="oe_kanban_content" modifiers="{}">
+                            <div class="o_kanban_record_top" modifiers="{}">
+                                <div class="o_kanban_record_headings" modifiers="{}">
+                                    <strong class="o_kanban_record_title" modifiers="{}"><span>S00048: [SERV_585189]
+                                            Customer Care (Prepaid Hours)</span></strong>
+
+                                    <br modifiers="{}">
+
+                                    <span modifiers="{}">
+                                        <span>Ready Mat</span>
+
+
+                                    </span>
+
+                                </div>
+                                <div class="o_dropdown_kanban dropdown" modifiers="{}">
+                                    <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown"
+                                        data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu"
+                                        modifiers="{}">
+                                        <span class="fa fa-ellipsis-v" modifiers="{}"></span>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu" modifiers="{}">
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            data-field="displayed_image_id" modifiers="{}" data-type="set_cover"
+                                            href="#">Set Cover Image</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-name="353" data-type="action" href="#">Share</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-type="edit" href="#">Edit</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-name="toggle_active" data-type="object" href="#">
+                                            Archive
+
+                                        </a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-type="delete" href="#">Delete</a>
+                                        <div role="separator" class="dropdown-divider" modifiers="{}"></div>
+                                        <ul class="oe_kanban_colorpicker" data-field="color" modifiers="{}">
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="0" class="oe_kanban_color_0"
+                                                    title="No color" aria-label="No color"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="1" class="oe_kanban_color_1"
+                                                    title="Red" aria-label="Red"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="2" class="oe_kanban_color_2"
+                                                    title="Orange" aria-label="Orange"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="3" class="oe_kanban_color_3"
+                                                    title="Yellow" aria-label="Yellow"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="4" class="oe_kanban_color_4"
+                                                    title="Light blue" aria-label="Light blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="5" class="oe_kanban_color_5"
+                                                    title="Dark purple" aria-label="Dark purple"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="6" class="oe_kanban_color_6"
+                                                    title="Salmon pink" aria-label="Salmon pink"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="7" class="oe_kanban_color_7"
+                                                    title="Medium blue" aria-label="Medium blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="8" class="oe_kanban_color_8"
+                                                    title="Dark blue" aria-label="Dark blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="9" class="oe_kanban_color_9"
+                                                    title="Fushia" aria-label="Fushia"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="10" class="oe_kanban_color_10"
+                                                    title="Green" aria-label="Green"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="11" class="oe_kanban_color_11"
+                                                    title="Purple" aria-label="Purple"></a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_body" modifiers="{}">
+                                <div class="o_field_many2manytags o_field_widget o_kanban_tags" name="tag_ids"></div>
+
+                            </div>
+                            <div class="o_kanban_record_bottom" modifiers="{}">
+                                <div class="oe_kanban_bottom_left" modifiers="{}">
+                                    <div role="radiogroup" class="o_priority o_field_widget" name="priority"
+                                        aria-label="Priority"><a href="#" role="radio" aria-checked="false"
+                                            title="Important" aria-label="Important" tabindex="0" data-index="1"
+                                            class="o_priority_star fa fa-star-o"></a></div>
+                                    <div class="o_kanban_inline_block dropdown o_mail_activity o_field_widget"
+                                        name="activity_ids">
+                                        <a class="dropdown-toggle o-no-caret o_activity_btn" data-toggle="dropdown"
+                                            role="button">
+
+                                            <span role="img"
+                                                class="fa fa-lg fa-fw o_activity_color_default fa-clock-o"></span>
+                                        </a>
+                                        <div class="dropdown-menu o_activity" role="menu"></div>
+                                    </div>
+
+
+
+
+
+
+                                    <div name="date_deadline"
+                                        attrs="{'invisible': ['|', ('is_fsm', '=', True), ('is_closed', '=', True)]}"
+                                        modifiers="{&quot;invisible&quot;:[&quot;|&quot;,[&quot;is_fsm&quot;,&quot;=&quot;,true],[&quot;is_closed&quot;,&quot;=&quot;,true]]}">
+                                        <div name="date_deadline" class="o_field_widget"></div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                    <div class="oe_kanban_align badge " title="Remaining hours" modifiers="{}">
+                                        <span class="o_field_float o_field_number o_field_widget"
+                                            name="remaining_hours">134:00</span>
+                                    </div>
+
+                                </div>
+                                <div class="oe_kanban_bottom_right" modifiers="{}">
+                                    <div class="btn-group o_selection o_field_widget" aria-atomic="true"
+                                        name="kanban_state">
+                                        <a href="#" data-toggle="dropdown" aria-expanded="false" role="button"
+                                            title="In Progress" aria-label="Kanban State: In Progress"><span
+                                                class="o_status"></span></a>
+                                        <div class="dropdown-menu state dropdown-menu-right" role="menu"><a
+                                                role="menuitem" href="#" class="dropdown-item" data-value="done">
+                                                <span class="o_status o_status_green"></span>
+                                                Ready
+                                            </a>
+
+                                            <a role="menuitem" href="#" class="dropdown-item" data-value="blocked">
+                                                <span class="o_status o_status_red"></span>
+                                                Blocked
+                                            </a></div>
+                                    </div>
+                                    <div class="o_field_many2one_avatar o_clickable_m2o_avatar o_field_widget"
+                                        name="user_id"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="oe_clear" modifiers="{}"></div>
+                    </div>
+                    <div class="oe_kanban_color_0 oe_kanban_card oe_kanban_global_click o_kanban_record oe_kanban_card_muted"
+                        modifiers="{}" tabindex="0" role="article">
+                        <div class="oe_kanban_content" modifiers="{}">
+                            <div class="o_kanban_record_top" modifiers="{}">
+                                <div class="o_kanban_record_headings" modifiers="{}">
+                                    <strong class="o_kanban_record_title" modifiers="{}"><span>S00047: [SERV_585189]
+                                            Customer Care (Prepaid Hours)</span></strong>
+
+                                    <br modifiers="{}">
+
+                                    <span modifiers="{}">
+                                        <span>Deco Addict</span>
+
+
+                                    </span>
+
+                                </div>
+                                <div class="o_dropdown_kanban dropdown" modifiers="{}">
+                                    <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown"
+                                        data-display="static" href="#" aria-label="Dropdown menu" title="Dropdown menu"
+                                        modifiers="{}">
+                                        <span class="fa fa-ellipsis-v" modifiers="{}"></span>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu" modifiers="{}">
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            data-field="displayed_image_id" modifiers="{}" data-type="set_cover"
+                                            href="#">Set Cover Image</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-name="353" data-type="action" href="#">Share</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-type="edit" href="#">Edit</a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-name="toggle_active" data-type="object" href="#">
+                                            Archive
+
+                                        </a>
+                                        <a role="menuitem" class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                                            modifiers="{}" data-type="delete" href="#">Delete</a>
+                                        <div role="separator" class="dropdown-divider" modifiers="{}"></div>
+                                        <ul class="oe_kanban_colorpicker" data-field="color" modifiers="{}">
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="0" class="oe_kanban_color_0"
+                                                    title="No color" aria-label="No color"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="1" class="oe_kanban_color_1"
+                                                    title="Red" aria-label="Red"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="2" class="oe_kanban_color_2"
+                                                    title="Orange" aria-label="Orange"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="3" class="oe_kanban_color_3"
+                                                    title="Yellow" aria-label="Yellow"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="4" class="oe_kanban_color_4"
+                                                    title="Light blue" aria-label="Light blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="5" class="oe_kanban_color_5"
+                                                    title="Dark purple" aria-label="Dark purple"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="6" class="oe_kanban_color_6"
+                                                    title="Salmon pink" aria-label="Salmon pink"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="7" class="oe_kanban_color_7"
+                                                    title="Medium blue" aria-label="Medium blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="8" class="oe_kanban_color_8"
+                                                    title="Dark blue" aria-label="Dark blue"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="9" class="oe_kanban_color_9"
+                                                    title="Fushia" aria-label="Fushia"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="10" class="oe_kanban_color_10"
+                                                    title="Green" aria-label="Green"></a>
+                                            </li>
+
+                                            <li>
+                                                <a role="menuitem" href="#" data-color="11" class="oe_kanban_color_11"
+                                                    title="Purple" aria-label="Purple"></a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o_kanban_record_body" modifiers="{}">
+                                <div class="o_field_many2manytags o_field_widget o_kanban_tags" name="tag_ids"></div>
+
+                            </div>
+                            <div class="o_kanban_record_bottom" modifiers="{}">
+                                <div class="oe_kanban_bottom_left" modifiers="{}">
+                                    <div role="radiogroup" class="o_priority o_field_widget" name="priority"
+                                        aria-label="Priority"><a href="#" role="radio" aria-checked="false"
+                                            title="Important" aria-label="Important" tabindex="0" data-index="1"
+                                            class="o_priority_star fa fa-star-o"></a></div>
+                                    <div class="o_kanban_inline_block dropdown o_mail_activity o_field_widget"
+                                        name="activity_ids">
+                                        <a class="dropdown-toggle o-no-caret o_activity_btn" data-toggle="dropdown"
+                                            role="button">
+
+                                            <span role="img"
+                                                class="fa fa-lg fa-fw o_activity_color_default fa-clock-o"></span>
+                                        </a>
+                                        <div class="dropdown-menu o_activity" role="menu"></div>
+                                    </div>
+
+
+
+
+
+
+                                    <div name="date_deadline"
+                                        attrs="{'invisible': ['|', ('is_fsm', '=', True), ('is_closed', '=', True)]}"
+                                        modifiers="{&quot;invisible&quot;:[&quot;|&quot;,[&quot;is_fsm&quot;,&quot;=&quot;,true],[&quot;is_closed&quot;,&quot;=&quot;,true]]}">
+                                        <div name="date_deadline" class="o_field_widget"></div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+                                    <div class="oe_kanban_align badge " title="Remaining hours" modifiers="{}">
+                                        <span class="o_field_float o_field_number o_field_widget"
+                                            name="remaining_hours">10:00</span>
+                                    </div>
+
+                                </div>
+                                <div class="oe_kanban_bottom_right" modifiers="{}">
+                                    <div class="btn-group o_selection o_field_widget" aria-atomic="true"
+                                        name="kanban_state">
+                                        <a href="#" data-toggle="dropdown" aria-expanded="false" role="button"
+                                            title="In Progress" aria-label="Kanban State: In Progress"><span
+                                                class="o_status"></span></a>
+                                        <div class="dropdown-menu state dropdown-menu-right" role="menu"><a
+                                                role="menuitem" href="#" class="dropdown-item" data-value="done">
+                                                <span class="o_status o_status_green"></span>
+                                                Ready
+                                            </a>
+
+                                            <a role="menuitem" href="#" class="dropdown-item" data-value="blocked">
+                                                <span class="o_status o_status_red"></span>
+                                                Blocked
+                                            </a></div>
+                                    </div>
+                                    <div class="o_field_many2one_avatar o_clickable_m2o_avatar o_field_widget"
+                                        name="user_id"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="oe_clear" modifiers="{}"></div>
+                    </div>
+                </div>
+                <div class="o_kanban_group o_kanban_no_records ui-sortable o_kanban_has_progressbar" data-id="2"
+                    role="feed" aria-labelledby="kanban_header_2">
+                    <div class="o_kanban_header">
+                        <div class="o_kanban_header_title">
+                            <span id="#kanban_header_2" class="o_column_title">In Progress</span>
+                            <span class="o_column_unfold"><i class="fa fa-arrows-h" role="img" aria-label="Unfold"
+                                    title="Unfold"></i></span>
+                            <span class="o_kanban_config dropdown">
+                                <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" href="#"><i
+                                        class="fa fa-gear" role="img" aria-label="Settings" title="Settings"></i></a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a role="menuitem" class="dropdown-item o_kanban_toggle_fold" href="#">Fold</a>
+
+                                    <a role="menuitem" class="dropdown-item o_column_edit" href="#">Edit Stage</a>
+                                    <a role="menuitem" class="dropdown-item o_column_delete" href="#">Delete</a>
+
+
+                                    <a role="menuitem" href="#" class="dropdown-item o_column_archive_records">Archive
+                                        All</a>
+                                    <a role="menuitem" href="#"
+                                        class="dropdown-item o_column_unarchive_records">Unarchive All</a>
+
+                                </div>
+                            </span>
+                            <span class="o_kanban_quick_add"><i class="fa fa-plus" role="img" aria-label="Quick add"
+                                    title="Quick add"></i></span>
+                        </div>
+                        <div class="o_kanban_counter">
+                            <div class="o_kanban_counter_progress progress">
+
+
+                                <div class="progress-bar bg-success-full" data-filter="done"
+                                    data-original-title="0 Ready" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-danger-full" data-filter="blocked"
+                                    data-original-title="0 Blocked" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-muted-full" data-filter="normal"
+                                    data-original-title="0 In Progress" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-muted-full" data-filter="__false"
+                                    data-original-title="0 Other" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+                            </div>
+                            <div class="o_kanban_counter_side"><b>0</b></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="o_kanban_group o_kanban_no_records ui-sortable o_kanban_has_progressbar o_column_folded"
+                    data-id="3" role="feed" aria-labelledby="kanban_header_3">
+                    <div class="o_kanban_header">
+                        <div class="o_kanban_header_title">
+                            <span id="#kanban_header_3" class="o_column_title">Done (0)</span>
+                            <span class="o_column_unfold"><i class="fa fa-arrows-h" role="img" aria-label="Unfold"
+                                    title="Unfold"></i></span>
+                            <span class="o_kanban_config dropdown">
+                                <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" href="#"><i
+                                        class="fa fa-gear" role="img" aria-label="Settings" title="Settings"></i></a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a role="menuitem" class="dropdown-item o_kanban_toggle_fold" href="#">Fold</a>
+
+                                    <a role="menuitem" class="dropdown-item o_column_edit" href="#">Edit Stage</a>
+                                    <a role="menuitem" class="dropdown-item o_column_delete" href="#">Delete</a>
+
+
+                                    <a role="menuitem" href="#" class="dropdown-item o_column_archive_records">Archive
+                                        All</a>
+                                    <a role="menuitem" href="#"
+                                        class="dropdown-item o_column_unarchive_records">Unarchive All</a>
+
+                                </div>
+                            </span>
+                            <span class="o_kanban_quick_add"><i class="fa fa-plus" role="img" aria-label="Quick add"
+                                    title="Quick add"></i></span>
+                        </div>
+                        <div class="o_kanban_counter">
+                            <div class="o_kanban_counter_progress progress">
+
+
+                                <div class="progress-bar bg-success-full" data-filter="done"
+                                    data-original-title="0 Ready" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-danger-full" data-filter="blocked"
+                                    data-original-title="0 Blocked" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-muted-full" data-filter="normal"
+                                    data-original-title="0 In Progress" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+
+                                <div class="progress-bar bg-muted-full" data-filter="__false"
+                                    data-original-title="0 Other" aria-valuemin="0" aria-valuemax="100"
+                                    aria-valuenow="0" role="progressbar" style=""></div>
+
+                            </div>
+                            <div class="o_kanban_counter_side"><b>0</b></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="o_column_quick_create">
+                    <div class="o_quick_create_folded">
+                        <span class="o_kanban_add_column"><i class="fa fa-plus" role="img" aria-label="Add column"
+                                title="Add column"></i></span>
+                        <span class="o_kanban_title">Add a Column</span>
+                    </div>
+                    <div class="o_quick_create_unfolded" style="display: none;">
+                        <div class="o_kanban_header">
+                            <div class="input-group">
+                                <input type="text" class="form-control o_input" placeholder="Column title">
+                                <span class="input-group-append">
+                                    <button class="btn btn-primary o_kanban_add" type="button">Add</button>
+                                </span>
+                            </div>
+                            <span class="o_discard_msg text-muted float-right">Esc to discard</span>
+
+                            <button type="button" class="btn btn-link o_kanban_examples">See examples</button>
+
+                        </div>
+                        <div class="o_kanban_muted_record"></div>
+                        <div class="o_kanban_muted_record"></div>
+                        <div class="o_kanban_muted_record"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div role="dialog" class="modal o_legacy_dialog o_technical_modal" id="modal_1491">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h4 class="modal-title">Tạo Dự Án Mới
+                        <span class="o_subtitle text-muted small"></span>
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                </header>
+                <main class="modal-body o_act_window">
+                    <div class="o_action o_view_controller">
+                        <div class="o_content">
+                            <div class="o_form_view o_form_nosheet o_form_editable">
+                                <table class="o_group o_inner_group">
+                                    <tbody>
+                                        <tr>
+                                            <td class="o_td_label"><label class="o_form_label o_required_modifier"
+                                                    for="o_field_input_1484">Tên Dự Án</label></td>
+                                            <td style="width: 100%;">
+                                                <input
+                                                    class="o_field_char o_field_widget o_input o_required_modifier o_project_name oe_inline"
+                                                    name="name" placeholder="e.g. Office Party" type="text"
+                                                    id="o_field_input_1484"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="o_td_label">
+                                                <label class="o_form_label" for="o_field_input_1485">Planning</label>
+                                            </td>
+                                            <td style="width: 100%;">
+                                                <div class="custom-control custom-checkbox o_field_boolean o_field_widget"
+                                                    name="allow_forecast">
+                                                    <input id="o_field_input_1485" type="checkbox"
+                                                        class="custom-control-input">
+                                                    <label for="o_field_input_1485"
+                                                        class="custom-control-label">​</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="o_td_label"><label class="o_form_label" for="o_field_input_1486"
+                                                    data-original-title="" title="">Worksheets</label></td>
+                                            <td style="width: 100%;">
+                                                <div class="custom-control custom-checkbox o_field_boolean o_field_widget"
+                                                    name="allow_worksheets"><input id="o_field_input_1486"
+                                                        type="checkbox" class="custom-control-input"><label
+                                                        for="o_field_input_1486" class="custom-control-label">​</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="o_td_label"><label class="o_form_label" for="o_field_input_1487"
+                                                    data-original-title="" title="">Timesheets</label></td>
+                                            <td style="width: 100%;">
+                                                <div class="custom-control custom-checkbox o_field_boolean o_field_widget"
+                                                    name="allow_timesheets"><input id="o_field_input_1487"
+                                                        type="checkbox" class="custom-control-input"><label
+                                                        for="o_field_input_1487" class="custom-control-label">​</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="o_td_label"><label class="o_form_label" for="o_field_input_1488"
+                                                    data-original-title="" title="">Billable</label></td>
+                                            <td style="width: 100%;">
+                                                <div class="custom-control custom-checkbox o_field_boolean o_field_widget"
+                                                    name="allow_billable">
+                                                    <input id="o_field_input_1488" type="checkbox"
+                                                        class="custom-control-input">
+                                                    <label for="o_field_input_1488"
+                                                        class="custom-control-label">​</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="modal-footer">
+                    <div>
+                        <footer><button type="button" name="action_view_tasks"
+                                class="btn btn-primary o_open_tasks"><span>Create</span></button><button type="button"
+                                class="btn btn-secondary" data-dismiss="modal"
+                                special="cancel"><span>Discard</span></button></footer>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <!-- <script src="./web.assets_backend.js"></script> -->
+    <script src="./web.assets_common.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>
