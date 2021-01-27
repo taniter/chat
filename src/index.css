@@ -171,7 +171,7 @@ a.socialIcon:hover,
   z-index: 1;
   overflow: hidden;
 }
-.getstart{
+.getstart {
   background-image: url("getstart.png");
 }
 .sidebar_nav .image_profile::before {
@@ -228,7 +228,7 @@ a.socialIcon:hover,
 .sidebar_main_body .chat_item:hover {
   background-color: lightblue;
 }
-.sidebar_main_body .chat_item .img_profile img{
+.sidebar_main_body .chat_item .img_profile img {
   width: 50px;
 }
 .sidebar_main_body .chat_item .img_profile {
@@ -295,7 +295,7 @@ a.socialIcon:hover,
   font-size: 13px;
 }
 
-.selected{
+.selected {
   background-color: #007bff;
 }
 
@@ -433,7 +433,6 @@ a.socialIcon:hover,
 .sidebar_main_body_search_friend .time_unread i:hover {
   color: blue;
 }
-
 
 .msg_cotainer {
   max-width: 75%;
